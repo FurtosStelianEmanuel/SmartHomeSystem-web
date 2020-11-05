@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J46BR60LWG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J46BR60LWG');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/interface_style.css">
+    <link rel="stylesheet" href="css/smarthomesystem.css">
+
+    <link rel="icon" type="image/png" href="/smarthomesystem/icon" />
+    <script src="p5/p5.min.js"></script>
+    <script src="js/smarthomesystem.android.js"></script>
+    <script src="js/Vehicle.js"></script>
+    <title>Android</title>
+</head>
+
+<body>
+    <div id="postLoad">
+        <div id="sketch-holder"></div>
+        <div id="content" style="display:none;" class="w3-container w3-center w3-animate-opacity">
+            <div>
+                <h1>
+                    Prezentare generală
+                </h1>
+                <p class="cen">
+                    Controlează ușor led strip-uri printr-o interfață interactivă și intuitivă, setează alarme care să
+                    îți aprindă automat luminile, modifică parametrii din Arduino, comandă calculatorul de la distanță
+                    și utilizează comenzi vocale pentru majoritatea funcțiilor.
+                </p>
+            </div>
+
+            <div class="box">
+                <hr>
+
+                <div style="vertical-align: top;">
+                    <h1>
+                        Meniul principal
+                    </h1>
+                    <img src="imagini/meniu_principal.jpg" width="300px" height="534px">
+
+                    <p style="text-align: justify;">
+                        Din acest meniu poți să alegi modulul bluetooth la care vrei să te conectezi, să controlezi
+                        lumina led-urilor glisând degetul peste color wheel, poți seta și intensitatea led-urilor,
+                        apăsând butonul 'microfon' activezi asistentul vocal la care poți să
+                        îi dictezi comenzi.
+
+                    </p>
+
+                </div>
+
+                <div style="vertical-align: top;">
+                    <h1>
+                        Bara de opțiuni
+                    </h1>
+                    <img src="imagini/bara_optiuni.jpg" width="300px" height="534px">
+                    <p style="text-align: justify; ">
+                        Aceasta va apărea la un right swipe din partea stângă a ecranului și din ea se poate accesa
+                        fiecare sub-meniu a aplicației
+                    </p>
+                </div>
+
+                <div style="vertical-align: top;">
+                    <h1>
+                        Setări color-picker
+                    </h1>
+                    <img src="imagini/color_wheel.jpg" width="300px" height="534px">
+                    <p style="text-align: justify;">
+                        De aici poți seta densitatea culorilor din color wheel
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="box">
+                <div style="vertical-align: top;">
+                    <h1>
+                        Setări ușă
+                    </h1>
+                    <img src="imagini/setari_usa.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">
+                        Prin acest meniu poți alege daca luminile se vor aprinde atunci cand ușa este deschisă sau daca
+                        se vor
+                        stinge atunci când ușa este închisă
+                    </p>
+                </div>
+
+                <div style="vertical-align: top;">
+                    <h1>Alarmă</h1>
+                    <img src="imagini/alarma.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">
+                        Setează o alarmă și configurează setările acesteia după placul tău
+                    </p>
+                </div>
+
+
+                <div style="vertical-align: top;">
+                    <h1>Asistent</h1>
+                    <img src="imagini/asistent.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">
+                        Pe lângă opțiunea de selectare a limbii, acest meniu arată și indicații asupra folosirii
+                        diferitelor comenzi vocale
+                        nu am updatat încă acest meniu cu toate comenzile suportate, momentan asistentul vocal suportă
+                        comenzi de genul: 'aprinde lumina', 'stinge lumina', 'portocaliu 15%', 'trezește-mă
+                        peste două ore', 'pune piesa angel of death', ș.a.m.d.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+
+                <div style="vertical-align: top;">
+                    <h1>PC Control</h1>
+                    <img src="imagini/pc.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">
+                        De aici poți să te conectezi cu aplicația ce rulează pe desktop pentru a controla calculatorul
+                        prin telefon,
+                        această conexiune poate fi realizată fie prin LAN, fie prin bluetooth. Meniul conține butoane de
+                        media, tastatură,
+                        mouse și shortcut pentru a stinge calculatorul, atunci când utilizatorul impune comanda vocală
+                        'pune o piesă',
+                        piesa specificată de acesta va fi redata pe desktop, nu pe telefon.
+                    </p>
+                </div>
+
+                <div style="vertical-align: top;">
+                    <h1>Notificare</h1>
+                    <img src="imagini/notificare1.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">
+                        Funcțiile aplicației pot fi accesate și din bara de notificări, de aici se poate
+                        stinge lumina sau aprinde lumina cu diferite culori
+                    </p>
+                </div>
+                <div style="vertical-align: top;">
+                    <h1>Notificare extinsă</h1>
+                    <img src="imagini/notificare2.jpg" width="300px" height="533px">
+                    <p style="text-align: justify;">Prin glisarea în jos a notificării apar mai multe opțiuni de
+                        control, printre care momentan se află doar
+                        accesul la asistentul vocal
+                    </p>
+                </div>
+
+            </div>
+            <footer>
+                <hr style="padding-top: 25px;">
+                <a href="/smarthomesystem/android/download/app-debug.apk"><button>Descarcă/updatează aplicația</button></a>
+                <p>
+                    Vezi și
+                    <a href="/smarthomesystem/desktop">aplicația pentru desktop</a>
+                    sau <a href="/smarthomesystem/web/">interfața web</a>
+                </p>
+                <p>Smart Home System este încă un proiect în lucru, nu toate funcțiile au fost prezentate prin aceste
+                    poze, detalii
+                    se pot găsi <a href="/smarthomesystem/android/detalii">aici</a></p>
+            </footer>
+        </div>
+
+
+    </div>
+    <div id="preLoad" class="loader" style="display:block"></div>
+
+
+</body>
+
+
+
+</html>

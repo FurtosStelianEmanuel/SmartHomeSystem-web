@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J46BR60LWG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J46BR60LWG');
+    </script>
+    <script src="js/socket.io/socket.io.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="p5/p5.min.js"></script>
+    <script src="js/sketch.js"></script>
+    <link rel="stylesheet" href="css/interface_style.css">
+    <link rel="icon" type="image/png" href="imagini/smarthomesystemicon.png" />
+    <script src="js/interface.js"></script>
+    <!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+    <title>Interfața</title>
+</head>
+<html>
+
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenavButton {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        font-size: 36px;
+        margin-left: 50px;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .container {
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    .darker {
+        border-color: #ccc;
+        background-color: #ddd;
+    }
+
+    .container::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    .container img {
+        float: left;
+        max-width: 60px;
+        width: 100%;
+        margin-right: 20px;
+        border-radius: 50%;
+    }
+
+    .container img.right {
+        float: right;
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    .time-right {
+        float: right;
+        color: #aaa;
+    }
+
+    .time-left {
+        float: left;
+        color: #999;
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+</style>
+
+<body>
+    <div id="sketch-holder">
+        <!-- Our sketch will go here! -->
+    </div>
+    <div id="spanac_holder" style="position:relative; padding-top:0px;padding-bottom:0px;"
+        class="w3-container w3-center w3-animate-top">
+        <span id="spanac" style="font-size:30px;cursor:pointer;padding-top:0px;"
+            onclick="javascript:openNav()">&#9776;</span>
+
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a style="position:absolute; top:5px;left:0px; color:#ffffff;" class="sidenavButton">Opțiunile&nbsp;tale</a>
+        <!--<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <a href="javascript:void(0)" class="sidenavButton" onclick="javascript:homePressed()">Home</a>
+    </div>
+    <div id="home_interface" class="w3-container w3-center w3-animate-top">
+
+        <h1 id="username_paragraph"> </h1>
+        <p>Smart Home System</p>
+        <!--<div style="text-align:left;">-->
+        <p id="server_socket_status" style="font-size:25px; ">Socket : Se conecteaza . . .</p>
+        <p id="arduino_status" style="font-size:25px">Arduino : offline</p>
+        <!--</div>-->
+    </div>
+    <div id="eventlog_interface" class="w3-container w3-center w3-animate-top"
+        style="display:none; padding-bottom:15px;">
+        <h1>Event Log</h1>
+        <p>Smart Home System</p>
+        <!--<textarea id="rxConsole" rows="10" cols="30"></textarea>-->
+
+        <div style="height: 400px; overflow:auto;">
+            <table>
+                <colgroup>
+                    <col span="0" style="width:45%;">
+                    <col span="1" style="width:55%;">
+                </colgroup>
+                <tr>
+                    <th>Ora</th>
+                    <th>Descriere</th>
+                </tr>
+                <tbody id="eventlog_body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="chat_interface" class="w3-container w3-center w3-animate-top" style="display:none; padding-bottom:15px;">
+        <h1>Chat</h1>
+        <div id="chat_content_holder" style="height:400px; overflow:auto;"></div>
+    </div>
+    <div id="message_interface" class="w3-container w3-center w3-animate-top"
+        style="display:none; padding-bottom:15px;">
+
+        <div style="position:relative; text-align:center; cursor:pointer; " onclick="chatBackButtonPressed();">
+            <a href="javascript:void(0)" class="arrow"></a>
+        </div>
+
+        <h1 id="destinatar">Mesagerie</h1>
+        <!--
+    <div id="mesaje" style="height:300px; overflow:auto;"></div>
+    -->
+        <div style="background-color:#ffffff; display:inline-block;padding-top:5px;padding-bottom:25px;">
+            <input id="text_box" style="width:500px; " onkeydown="if(event.keyCode == 13)sendMessage()"></input>
+        </div>
+
+    </div>
+    <div id="server_admin_interface" class="w3-container w3-center w3-animate-top"
+        style="display:none; padding-bottom:15px;">
+        <h1>Server admin</h1>
+        <div style="height: 400px; overflow:auto;">
+            <table>
+                <colgroup>
+                    <col span="0" style="width:45%;">
+                    <col span="1" style="width:55%;">
+                </colgroup>
+                <tr>
+                    <th>Domeniu</th>
+                    <th>IP</th>
+                </tr>
+                <tbody id="server_admin_body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

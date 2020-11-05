@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<!--
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J46BR60LWG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-J46BR60LWG');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/interface_style.css">
+    <link rel="stylesheet" href="css/smarthomesystem.css">
+
+    <link rel="icon" type="image/png" href="/smarthomesystem/icon" />
+    <script src="p5/p5.min.js"></script>
+    <script src="js/smarthomesystem.web.js"></script>
+    <script src="js/Vehicle.js"></script>
+    <title>Interfata web</title>
+</head>
+
+<body>
+    <div id="postLoad">
+        <div id="sketch-holder"></div>
+        <div id="content" style="display:none;" class="w3-container w3-center w3-animate-opacity">
+            <div>
+                <h1>Prezentare generală</h1>
+                <p class="cen">
+                    Vezi ce se întâmplă în camera ta oriunde ai fi în lume (deschiderea/închiderea ușii, detectare de
+                    mișcare, aprinderea/
+                    stingerea luminilor, etc...). Controlează orice fel de dispozitive electrice conectate la Arduino
+                    (lumini, sistem de
+                    închidere a ușii, aer condiționat, ș.a.m.d.)
+                </p>
+            </div>
+
+            <div class="box">
+                <hr>
+                <div style="vertical-align: top;">
+                    <h1>Secțiunea Home</h1>
+                    <img src="imagini/interfata.png" width="300px" height="169px">
+                    <p style="text-align: justify;">De aici poți vedea daca Arduino-ul tău este conectat la platformă
+                        sau dacă conexiunea dintre tine și server este activă</p>
+                </div>
+                <div style="vertical-align: top;">
+                    <h1>Meniu</h1>
+                    <img src="imagini/meniu.png" widht="300px" height="169px">
+                    <p style="text-align: justify;">În acest meniu apar toate opțiunile de care dispune sistemul tău</p>
+                </div>
+                <div style="vertical-align: top;">
+                    <h1>Event Log</h1>
+                    <img src="imagini/eventlog.png" width="300px" height="169px">
+                    <p style="text-align: justify;">De aici poți vedea mesajele receptionate de la Arduino sau ESP8266
+                    </p>
+                </div>
+                <div>
+                    <h1>Chat</h1>
+                    <img src="imagini/chat.png" width="300px" height="169px">
+                    <p style="text-align: justify;">Poți vorbi cu alți utilizatori direct de pe platforma
+                        mysmarthomesystem</p>
+                </div>
+            </div>
+
+            <footer>
+                <hr style="padding-top: 25px;">
+
+                <a href="/"><button>Accesează interfața</button></a>
+
+                <p>
+                    Vezi și
+                    <a href="/smarthomesystem/android">aplicația pentru android</a>
+                    sau <a href="/smarthomesystem/desktop">aplicația pentru desktop</a>
+                </p>
+                <p>Smart Home System este încă un proiect în lucru, nu toate funcțiile au fost prezentate prin aceste
+                    poze, detalii
+                    se pot găsi <a href="">aici</a>
+                </p>
+
+            </footer>
+        </div>
+    </div>
+
+    <div id="preLoad" class="loader" style="display:block;"></div>
+
+</body>
+
+
+
+</html>
