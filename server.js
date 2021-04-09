@@ -470,6 +470,10 @@ app.post('/report-event', (req, res) => {
  */
 serverMonitors = []
 
+app.get('/up', (req, res) => {
+    res.send({ state: 'OK' }).end()
+})
+
 app.post('/server-monitor', (req, res) => {
     console.log('Am primit stire de la un server ' + req.connection.remoteAddress)
     console.log(req.headers)
