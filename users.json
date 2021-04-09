@@ -1,0 +1,117 @@
+{
+    "users": [
+        {
+            "username": "Furtos Stelian Emanuel",
+            "password": "combina1",
+            "background": "lemmy.jpg",
+            "interface_options": [
+                "Event Log",
+                "Server admin",
+                "Chat",
+                "S.H.S.",
+                "Log out"
+            ],
+            "friends": [
+                "Onita Andrei",
+                "Moldovan Tudor",
+                "Popovici Serban",
+                "Vuscan Sergiu",
+                "Oros Andrei"
+            ],
+            "avatar": "stelian_avatar.jpg"
+        },
+        {
+            "username": "admin",
+            "password": "admin",
+            "background": "default.jpg",
+            "interface_options": [
+                "Event Log"
+            ]
+        },
+        {
+            "username": "Onita Andrei",
+            "password": "combina1",
+            "background": "gay.jpg",
+            "interface_options": [
+                "Chat",
+                "Event Log"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel",
+                "Moldovan Tudor",
+                "Popovici Serban"
+            ],
+            "avatar": "onita_avatar.jpg"
+        },
+        {
+            "username": "Moldovan Tudor",
+            "password": "combina1",
+            "background": "lemmy.jpg",
+            "interface_options": [
+                "Chat"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel",
+                "Onita Andrei",
+                "Popovici Serban"
+            ],
+            "avatar": "tudor_avatar.jpg"
+        },
+        {
+            "username": "Popovici Serban",
+            "password": "combina1",
+            "background": "lemmy.jpg",
+            "interface_options": [
+                "Chat",
+                "Event Log",
+                "Log out"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel",
+                "Moldovan Tudor",
+                "Onita Andrei"
+            ],
+            "avatar": "serban_avatar.jpg"
+        },
+        {
+            "username": "Vuscan Sergiu",
+            "password": "combina1",
+            "background": "etype.jpg",
+            "interface_options": [
+                "Chat"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel",
+                "Moldovan Tudor",
+                "Onita Andrei"
+            ],
+            "avatar": "sergiu_avatar.jpg"
+        },
+        {
+            "username": "Oros Andrei",
+            "password": "combina1",
+            "background": "oxygene.jpg",
+            "interface_options": [
+                "Chat"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel",
+                "Onita Andrei"
+            ],
+            "avatar": "sergiu_avatar.jpg"
+        },
+        {
+            "username": "Cartis Vlad",
+            "password": "serverftp420",
+            "background": "etype.jpg",
+            "interface_options": [
+                "Chat",
+                "Server admin"
+            ],
+            "friends": [
+                "Furtos Stelian Emanuel"
+            ],
+            "avatar": "serban_avatar.jpg"
+        }
+    ]
+}

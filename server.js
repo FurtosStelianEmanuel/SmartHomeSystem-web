@@ -502,7 +502,7 @@ app.post('/server-monitor', (req, res) => {
 })
 
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8001
 
 server = app.listen(PORT, () => {
     console.log("Server activ :")
